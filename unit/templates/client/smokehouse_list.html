@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Коптильни{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {% for smokehouse in smokehouses %}
+            <div class="col mb-5">
+                <div class="card h-100">
+                    {% for image in smokehouse.images.all %}
+                    {% if forloop.first %}
+                    <img class="product" src="{{ image.image.url }}" alt="{{ smokehouse.model }}" width="150">
+                    {% endif %}
+                    {% endfor %}
+                    
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Название продукта -->
+                            <h5 class="fw-bolder">{{ smokehouse.model }}</h5>
+                            <!-- Размер и материал продукта -->
+                            <p>{{ smokehouse.size }} - {{ smokehouse.material }}</p>
+                            <!-- Вес продукта -->
+                            <p>{{ smokehouse.weight }} кг</p>
+                        </div>
+                    </div>
+                    <!-- Действия для продукта -->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center">
+                            <a class="btn btn-outline-dark mt-auto w-100" href="{% url 'smokehouse_detail' smokehouse.slug %}">Подробнее...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

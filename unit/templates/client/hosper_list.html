@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Наши Хосперы{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <h1 class="display-5 text-center mb-5">Наши Хосперы</h1>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {% for hosper in hospers %}
+            <div class="col mb-5">
+                <div class="card h-100 shadow-sm">
+                    <!-- Display the first image if it exists, otherwise show a default image -->
+                    {% if hosper.images.first %}
+                        <img src="{{ hosper.images.first.image.url }}" class="card-img-top img-fluid" alt="{{ hosper.model }}" style="height: 200px; object-fit: cover;">
+                    {% else %}
+                        <img src="{% static 'images/default.jpg' %}" class="card-img-top img-fluid" alt="{{ hosper.model }}" style="height: 200px; object-fit: cover;">
+                    {% endif %}
+                    
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name -->
+                            <h5 class="fw-bolder">{{ hosper.model }}</h5>
+                            <!-- Product size and material -->
+                            <p>{{ hosper.size }} - {{ hosper.material }}</p>
+                            <!-- Product price -->
+                            <!-- <p class="text-success"><strong>{{ hosper.price }} USD</strong></p> -->
+                        </div>
+                    </div>
+
+                    <!-- Product actions -->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center">
+                            <a class="btn btn-outline-dark mt-auto w-100" href="{% url 'hosper_detail' hosper.slug %}">Подробнее...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

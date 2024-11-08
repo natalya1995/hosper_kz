@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Хосперы UNIT{% endblock %}
+
+{% block content %}
+ 
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <img class="img-fluid" src="{% static './image/unit.webp' %}" alt="..." />
+                    <h2 class="text-white mx-auto mt-2 mb-5">Воплощайте свои кулинарные фантазии с Хоспером!</h2>
+                    <a class="btn btn-primary" href="#about">Узнать больше</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About-->
+    <section class="about-section text-center" id="about">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="text-white mb-4">НОВЫЕ ВОЗМОЖНОСТИ ДЛЯ  ВАШЕГО БИЗНЕСА!</h2>
+                    <p class="text-white-50">
+                    Один из способов привлечь в кафе, ресторан, гурманов – предложить блюда, приготовленные на гриле. У них особый вкус – более изысканный , тонкий и манящий аромат.Наша компания предстовляет  <a href="{% url 'category_page'%}">печь-гриль</a> для ресторана, паба, кафе с продуманной конструкцией и высоким качеством материала.После установки печи хоспер меню вашего заведения преобразится, а количество посетителей увеличится!!!
+                       
+                    </p>
+                </div>
+            </div>
+            <img class="img-fluid" src="{% static './image/25.png' %}" alt="..." />
+        </div>
+    </section>
+
+
+    <section class="projects-section bg-light" id="projects">
+        <div class="container px-4 px-lg-5">
+            <!-- Featured Project Row-->
+            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                <div class="col-xl-8 col-lg-7">
+                    <img class="img-fluid mb-3 mb-lg-0" src="{% static './image/pluse.png' %}" alt="..." />
+                </div>
+                <div class="col-xl-4 col-lg-5">
+                    <div class="featured-text text-center text-lg-left">
+                        <h4>ПЛЮСЫ ПЕЧИ ХОСПЕР КОМПАНИИ UNIT</h4>
+                        <p class="text-black-50 mb-0">Гриль-печь BQB – конструкция закрытого типа, оснащенная специальными решетками. На них можно раскладывать мясо, рыбу, морепродукты, овощи, а также емкости с едой — тарелки и сковородки. Еда, приготовленная на гриле — особый вид искусства. Она — сочная, ароматная, содержит минимум жира и максимум пользы. 
+
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="signup-section" id="signup">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-map-marked-alt text-uppercase mb-2"></i>
+                            <h4 class="text-uppercase m-0">Адрес</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black">РК, г. Алматы, Наурызбайский р-н, с/о Кооператор 7</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope text-uppercase mb-2"></i>
+                            <h4 class="text-uppercase m-0">Email</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black"><a href="mailto:nata.mark140895@gmail.com">nata.mark140895@gmail.com</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-mobile-alt text-uppercase mb-2"></i>
+                            <h4 class="text-uppercase m-0">Телефон и Соцсети</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="social-links mt-3">
+                                <a href="https://wa.me/77755287146" class="text-black mx-2" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </a><br>
+                                <a href="https://www.instagram.com/ukrainianhosper/" class="text-black mx-2" target="_blank">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Категории{% endblock %}
+
+{%block content%}
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{% static './image/category_hosper.png' %}" alt="{{ stand.model }}" />
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <h5 class="fw-bolder">Хосперы серии BQB</h5>
+                        </div>
+                    </div>
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto w-100" href="{% url 'hosper_list' %}">Подробнее...</a></div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{% static './image/stand_category.png' %}" alt="{{ stand.model }}" />
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <h5 class="fw-bolder">Подставки</h5>
+                        </div>
+                    </div>
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto w-100" href="{% url 'stand_list' %}">Подробнее...</a></div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{% static './image/smoc.png' %}" alt="{{ stand.model }}" />
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <h5 class="fw-bolder">Коптильни</h5>
+                        </div>
+                    </div>
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto w-100" href="{% url 'smokehouse_list' %}">Подробнее...</a></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</section>
+{%endblock%}

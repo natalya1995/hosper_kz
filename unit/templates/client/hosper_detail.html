@@ -1,0 +1,45 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block title %}{{ hosper.model }}{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container my-5">
+        <div class="row">
+            <!-- Product Details -->
+            <div class="col-md-6">
+                <h1 class="display-4">{{ hosper.model }}</h1>
+                <p class="lead">{{ hosper.size }} - {{ hosper.material }}</p>
+                <p><strong>Вес:</strong> {{ hosper.weight }} кг</p>
+                <p><strong>Производитель:</strong> {{ hosper.manufacturer }}</p>
+                <p><strong>Решётка:</strong> {{ hosper.lattice }}</p>
+                <p><strong>Описание:</strong> {{ hosper.descriptions }}</p>
+                <!-- <p class="h4 text-success"><strong>Цена:</strong> {{ hosper.price }} USD</p>
+                <p><strong>Наличие:</strong> {{ hosper.availability }}</p> -->
+            </div>
+
+            <!-- Product Images Carousel -->
+            <div class="col-md-6">
+                <div id="hosperCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for image in hosper.images.all %}
+                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                <img src="{{ image.image.url }}" class="d-block w-100 img-fluid" alt="{{ hosper.model }}" >
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <!-- Carousel Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#hosperCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#hosperCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
